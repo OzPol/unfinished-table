@@ -1,4 +1,4 @@
-const CACHE = "unfinished-table-v1";
+const CACHE = "unfinished-table-v2";
 const SHELL = [
   "./", "./index.html", "./styles.css", "./app.js", "./model.js", "./orbitals.js",
   "./compounds.js", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png",

@@ -38,7 +38,7 @@ The [Ptable reference](https://ptable.com/about/) informed the feature inventory
 | Area | Prototype coverage |
 |---|---|
 | Table layout | Compact and inline f-block layouts, responsive scrolling, tile density, controls above/beside/hidden, light and dark palettes |
-| Cell interactions | Hover/focus preview, click/tap summary, close with Escape or button, full element view, arrow navigation, interactive family and phase legends |
+| Cell interactions | Hover/focus preview, click/tap summary, close with Escape or button, full element view with an option to open it in a new tab, arrow navigation, interactive family and phase legends |
 | Missing cells | Optional rectangle with clickable layout gaps and proposed elements, separate missing-property markers |
 | Numeric properties | Property maps, linear/log scales, customizable low/high/zero/missing colors, unit conversions, 30 ionization steps, radii, hardness, moduli, conductivities, heat, density and two abundance media |
 | Temperature and history | Live phase slider, editable Celsius/Fahrenheit/Kelvin and step/reset controls, discovery-year cutoff |
@@ -46,6 +46,6 @@ The [Ptable reference](https://ptable.com/about/) informed the feature inventory
 | Isotopes | Element isotope selection, radioactive/stable filtering, decay indicators and 12 metrics, with measured and derived quantities identified |
 | Compounds | Select elements from the table, adjust counts, match exact formulas, search names/CAS/formula, see matching counts, query PubChem live or browse the offline index |
 | Compare and export | Interactive scatter plots, numeric/name/symbol/Z search, CSV/JSON/image exports, print styling, shareable view links, and offline caching |
-| Reference coverage still open | Additional abundance media, liquid densities, full-language editions, detachable write-ups, draggable isotope overlays, and blanket data parity with Ptable |
+| Reference coverage still open | Additional abundance media, liquid densities, full-language editions, docked write-ups, draggable isotope overlays, and full data coverage |
 
 The app's navigation and outputs live in this repo. The reference site's store, social channels, lesson plans, and promotions are external content.
