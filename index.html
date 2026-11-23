@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f7f7">
+  <meta name="description" content="An interactive periodic table with traceable data, live property views, and room for open questions.">
+  <title>The Unfinished Table</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to the table</a>
+  <header class="masthead">
+    <a href="?" id="home" class="wordmark" aria-label="The Unfinished Table home">
+      <span class="mark" aria-hidden="true">??</span>
+      <span>The Unfinished Table</span>
+    </a>
+    <div class="top-actions">
+      <label class="search"><span class="visually-hidden">Search elements or properties</span>
+        <input id="search" type="search" placeholder="Search name, symbol, or Z" autocomplete="off" spellcheck="false">
+      </label>
+      <button id="theme" class="button" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <main id="workspace" class="workspace" tabindex="-1">
+    <div class="navigation">
+      <nav id="views" aria-label="Explorer views">
+        <button type="button" data-view="properties" aria-current="page">Properties</button>
+        <button type="button" data-view="electrons">Electrons</button>
+        <button type="button" data-view="isotopes">Isotopes</button>
+        <button type="button" data-view="compounds">Compounds</button>
+        <button type="button" data-view="compare">Compare</button>
+      </nav>
+      <div class="view-actions">
+        <div class="segmented" aria-label="Table width">
+          <button id="compact" type="button" aria-pressed="true">Compact</button>
+          <button id="wide" type="button" aria-pressed="false">Wide</button>
+        </div>
+        <label class="check-field"><input id="gaps" type="checkbox"><span>Show gaps</span><span class="mini-mark" aria-hidden="true">??</span></label>
+        <details id="settings" class="menu">
+          <summary>View settings</summary>
+          <div class="menu-body">
+            <label>Controls <select id="panel"><option value="top">Above table</option><option value="side">Beside table</option><option value="hidden">Hidden</option></select></label>
+            <label>Tile labels <select id="labels"><option value="full">Name and value</option><option value="symbol">Symbol and value</option><option value="configuration">Electron configuration</option></select></label>
+            <label>Color scale <select id="scale"><option value="linear">Linear</option><option value="log">Logarithmic</option></select></label>
+            <fieldset class="colors">
+              <legend>Property colors</legend>
+              <label>Low <input id="low" type="color"></label>
+              <label>High <input id="high" type="color"></label>
+              <label>Zero <input id="zero" type="color"></label>
+              <label>Missing <input id="missing" type="color"></label>
+            </fieldset>
+            <button type="button" id="reset-colors" class="button">Reset colors</button>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <p id="loading" role="status">Loading element data…</p>
+    <div id="explorer" hidden>
+      <section id="controls" class="controls" aria-label="View controls">
+        <div class="control-row" id="property-controls">
+          <label class="control-label">Color by <select id="property"></select></label>
+          <label class="control-label" id="ion-label" hidden>Ionization <select id="ion"></select></label>
+          <label class="control-label" id="unit-label" hidden>Unit <select id="unit"></select></label>
+          <div id="temperature" class="temperature">
+            <label for="temp-range" class="control-title">Temperature</label>
+            <button id="temp-back" type="button" class="step" aria-label="Decrease temperature by 1 kelvin">−</button>
+            <input id="temp-range" type="range" min="0" max="6000" step="0.05" value="293.15">
+            <button id="temp-forward" type="button" class="step" aria-label="Increase temperature by 1 kelvin">+</button>
+            <div class="readouts">
+              <label><input id="celsius" aria-label="Degrees Celsius" type="number" step="any" value="20"><span>°C</span></label>
+              <label><input id="fahrenheit" aria-label="Degrees Fahrenheit" type="number" step="any" value="68"><span>°F</span></label>
+              <label><input id="kelvin" aria-label="Kelvin" type="number" step="any" value="293.15"><span>K</span></label>
+            </div>
+            <button type="button" class="quiet" id="temp-reset">Reset</button>
+          </div>
+          <div class="timeline" id="timeline" hidden>
+            <label for="year-range" class="control-title">Discovered by</label>
+            <input id="year-range" type="range" min="-10000" max="2026" value="2026">
+            <label><input id="year-input" aria-label="Discovery cutoff year, negative for BCE" type="number" min="-10000" max="2026" value="2026"><span id="year-era">CE</span></label>
+            <button type="button" class="quiet" id="year-reset">Present</button>
+          </div>
+        </div>
+        <div class="control-row" id="electron-controls" hidden>
+          <label class="control-label">Show on tiles <select id="electron">
+            <option value="oxidation">Oxidation states</option><option value="configuration">Configuration</option>
+            <option value="expanded">Expanded configuration</option><option value="shells">Electrons per shell</option>
+            <option value="block">Orbital block</option><option value="hoao">Outermost quantum numbers</option>
+          </select></label>
+          <p>Select an element to inspect its orbitals.</p>
+        </div>
+        <div class="control-row" id="isotope-controls" hidden>
+          <label class="control-label">Isotope metric <select id="nuclide"></select></label>
+          <label class="check-field"><input id="allNuclides" type="checkbox" checked>Include radioactive isotopes</label>
+          <p>Select an element to expand its isotope series.</p>
+        </div>
+        <div class="control-row" id="compound-controls" hidden>
+          <label class="control-label compound-search">Find a compound <input id="compound" type="search" placeholder="Name, formula, or CAS number"></label>
+          <label class="check-field"><input type="checkbox" id="exact">Exact formula</label>
+          <button type="button" id="remote-search" class="button">Search PubChem</button>
+          <button type="button" id="clear-mix" class="quiet">Clear selection</button>
+          <div id="mix" class="mix"></div>
+        </div>
+        <div class="control-row" id="compare-controls" hidden>
+          <label class="control-label">Horizontal axis <select id="x"></select></label>
+          <label class="control-label">Vertical axis <select id="y"></select></label>
+          <p>Select a point for the element summary.</p>
+        </div>
+      </section>
+
+      <section id="map" class="map-card" aria-label="Interactive periodic table">
+        <div class="map-head">
+          <div><h1 id="map-title">Periodic table</h1><p id="map-status" role="status"></p></div>
+          <span id="peek" class="peek"></span>
+        </div>
+        <p class="grid-hint">Scroll across to see all groups.</p>
+        <div class="grid-scroll" tabindex="0" aria-label="Scrollable periodic table">
+          <div id="grid" class="element-grid"></div>
+        </div>
+        <div id="legend" class="legend" aria-label="Table legend"></div>
+      </section>
+      <section id="extra" class="extra" hidden></section>
+    </div>
+
+    <article id="detail" class="detail" hidden></article>
+    <footer class="footer">
+      <p>For Oz and Axiom, who wanted the questions to be as visible as the answers.</p>
+      <div class="footer-actions">
+        <button type="button" class="quiet" id="share">Share view</button>
+        <button type="button" class="quiet" id="csv">Export CSV</button>
+        <button type="button" class="quiet" id="json">Export JSON</button>
+        <button type="button" class="quiet" id="image">Save table image</button>
+        <button type="button" class="quiet" id="print">Print</button>
+        <button type="button" class="quiet" id="sources">Sources</button>
+      </div>
+      <p id="notice" role="status" hidden></p>
+    </footer>
+  </main>
+
+  <dialog id="summary" class="summary" aria-labelledby="summary-title">
+    <form method="dialog" class="dialog-actions"><button class="button" aria-label="Close summary">×</button></form>
+    <div id="summary-content"></div>
+  </dialog>
+</body>
+</html>

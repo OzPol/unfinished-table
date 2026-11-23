@@ -1,0 +1,282 @@
+[
+  {
+    "cid": 962,
+    "name": "Water",
+    "formula": "H2O",
+    "weight": 18.015,
+    "aliases": [
+      "Water"
+    ],
+    "cas": [
+      "7732-18-5"
+    ]
+  },
+  {
+    "cid": 5234,
+    "name": "Sodium Chloride",
+    "formula": "ClNa",
+    "weight": 58.44,
+    "aliases": [
+      "Table salt"
+    ],
+    "cas": [
+      "7647-14-5"
+    ]
+  },
+  {
+    "cid": 180,
+    "name": "Acetone",
+    "formula": "C3H6O",
+    "weight": 58.08
+  },
+  {
+    "cid": 280,
+    "name": "Carbon Dioxide",
+    "formula": "CO2",
+    "weight": 44.009,
+    "aliases": [
+      "Carbonic acid gas"
+    ],
+    "cas": [
+      "124-38-9"
+    ]
+  },
+  {
+    "cid": 887,
+    "name": "Methanol",
+    "formula": "CH4O",
+    "weight": 32.042
+  },
+  {
+    "cid": 944,
+    "name": "Nitric Acid",
+    "formula": "HNO3",
+    "weight": 63.013
+  },
+  {
+    "cid": 784,
+    "name": "Hydrogen Peroxide",
+    "formula": "H2O2",
+    "weight": 34.015
+  },
+  {
+    "cid": 14798,
+    "name": "Sodium Hydroxide",
+    "formula": "HNaO",
+    "weight": 39.997
+  },
+  {
+    "cid": 1004,
+    "name": "Phosphoric Acid",
+    "formula": "H3O4P",
+    "weight": 97.995
+  },
+  {
+    "cid": 767,
+    "name": "Carbonic Acid",
+    "formula": "CH2O3",
+    "weight": 62.025
+  },
+  {
+    "cid": 313,
+    "name": "Hydrochloric Acid",
+    "formula": "ClH",
+    "weight": 36.46
+  },
+  {
+    "cid": 14917,
+    "name": "Hydrofluoric Acid",
+    "formula": "FH",
+    "weight": 20.0064
+  },
+  {
+    "cid": 6334,
+    "name": "Propane",
+    "formula": "C3H8",
+    "weight": 44.1
+  },
+  {
+    "cid": 176,
+    "name": "Acetic Acid",
+    "formula": "C2H4O2",
+    "weight": 60.05
+  },
+  {
+    "cid": 702,
+    "name": "Ethanol",
+    "formula": "C2H6O",
+    "weight": 46.07,
+    "aliases": [
+      "Ethyl alcohol"
+    ],
+    "cas": [
+      "64-17-5"
+    ]
+  },
+  {
+    "cid": 1049,
+    "name": "Pyridine",
+    "formula": "C5H5N",
+    "weight": 79.1
+  },
+  {
+    "cid": 243,
+    "name": "Benzoic Acid",
+    "formula": "C7H6O2",
+    "weight": 122.12
+  },
+  {
+    "cid": 241,
+    "name": "Benzene",
+    "formula": "C6H6",
+    "weight": 78.11
+  },
+  {
+    "cid": 297,
+    "name": "Methane",
+    "formula": "CH4",
+    "weight": 16.043
+  },
+  {
+    "cid": 1118,
+    "name": "Sulfuric Acid",
+    "formula": "H2O4S",
+    "weight": 98.08
+  },
+  {
+    "cid": 14796,
+    "name": "Dioxogermane",
+    "formula": "GeO2",
+    "weight": 104.63
+  },
+  {
+    "cid": 1032,
+    "name": "Propionic Acid",
+    "formula": "C3H6O2",
+    "weight": 74.08
+  },
+  {
+    "cid": 516892,
+    "name": "Sodium Bicarbonate",
+    "formula": "CHNaO3",
+    "weight": 84.007
+  },
+  {
+    "cid": 24261,
+    "name": "Silica",
+    "formula": "O2Si",
+    "weight": 60.084
+  },
+  {
+    "cid": 14792,
+    "name": "Magnesium Oxide",
+    "formula": "MgO",
+    "weight": 40.305
+  },
+  {
+    "cid": 14013,
+    "name": "Ammonium Bicarbonate",
+    "formula": "CH5NO3",
+    "weight": 79.056
+  },
+  {
+    "cid": 1117,
+    "name": "Sulfate Ion",
+    "formula": "O4S-2",
+    "weight": 96.07
+  },
+  {
+    "cid": 335,
+    "name": "O-Cresol",
+    "formula": "C7H8O",
+    "weight": 108.14
+  },
+  {
+    "cid": 3033,
+    "name": "Diclofenac",
+    "formula": "C14H11Cl2NO2",
+    "weight": 296.1
+  },
+  {
+    "cid": 2244,
+    "name": "Aspirin",
+    "formula": "C9H8O4",
+    "weight": 180.16,
+    "aliases": [
+      "Acetylsalicylic acid"
+    ],
+    "cas": [
+      "50-78-2"
+    ]
+  },
+  {
+    "cid": 5793,
+    "name": "D-Glucose",
+    "formula": "C6H12O6",
+    "weight": 180.16
+  },
+  {
+    "cid": 2519,
+    "name": "Caffeine",
+    "formula": "C8H10N4O2",
+    "weight": 194.19,
+    "aliases": [],
+    "cas": [
+      "58-08-2"
+    ]
+  },
+  {
+    "cid": 5988,
+    "name": "Sucrose",
+    "formula": "C12H22O11",
+    "weight": 342.3
+  },
+  {
+    "cid": 439232,
+    "name": "N-Acetyl-L-ornithine",
+    "formula": "C7H14N2O3",
+    "weight": 174.2
+  },
+  {
+    "cid": 753,
+    "name": "Glycerol",
+    "formula": "C3H8O3",
+    "weight": 92.09
+  },
+  {
+    "cid": 18517,
+    "name": "1-(3,5'-Dichlorophenyl)-2,2-dimethyl-4,6-diamino-1,2-dihydro-S-triazine",
+    "formula": "C11H13Cl2N5",
+    "weight": 286.16
+  },
+  {
+    "cid": 189522,
+    "name": "5-Hex-5-enyl-1,3-benzodioxole",
+    "formula": "C13H16O2",
+    "weight": 204.26
+  },
+  {
+    "cid": 333,
+    "name": "5-Amino-6-(5'-phosphoribitylamino)uracil",
+    "formula": "C9H17N4O9P",
+    "weight": 356.23
+  },
+  {
+    "cid": 932,
+    "name": "(+-)-Naringenin",
+    "formula": "C15H12O5",
+    "weight": 272.25
+  },
+  {
+    "cid": 237,
+    "name": "(+-)-Quinacrine",
+    "formula": "C23H30ClN3O",
+    "weight": 400.0
+  },
+  {
+    "cid": 24380,
+    "name": "Iron chloride (FeCl3)",
+    "formula": "Cl3Fe",
+    "weight": 162.2
+  }
+]
